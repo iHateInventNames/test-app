@@ -1,0 +1,6 @@
+project(client)
+
+add_executable(client chat_client.cpp main.cpp)
+target_link_libraries(client shared)
+
+install(TARGETS client RUNTIME DESTINATION bin)

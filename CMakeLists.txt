@@ -1,5 +1,14 @@
-project(server)
+cmake_minimum_required(VERSION 2.8)
 
-add_executable(server main.cpp)
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(-std=c++11)
+endif()
 
-install(TARGETS server RUNTIME DESTINATION bin)
+include_directories(shared)
+
+list(APPEND shared_libs shared)
+
+add_subdirectory(shared)
+add_subdirectory(server)
+add_subdirectory(client)
+
